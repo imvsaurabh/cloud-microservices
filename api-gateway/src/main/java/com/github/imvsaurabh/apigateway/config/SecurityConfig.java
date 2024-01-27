@@ -14,11 +14,6 @@ import reactor.netty.http.client.HttpClient;
 public class SecurityConfig {
 
     @Bean
-    public HttpClient httpClient() {
-        return HttpClient.create().resolver(DefaultAddressResolverGroup.INSTANCE);
-    }
-
-    @Bean
     public SecurityWebFilterChain springSecurityFilterChain(ServerHttpSecurity serverHttpSecurity) {
         serverHttpSecurity
                 .csrf(ServerHttpSecurity.CsrfSpec::disable)
